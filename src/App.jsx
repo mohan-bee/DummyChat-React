@@ -55,5 +55,5 @@ const Nav = styled.div`
     padding: 30px 50px;
     display: flex;
     justify-content: space-between;
-    gap: 100px;
+    gap: 50px;
 `

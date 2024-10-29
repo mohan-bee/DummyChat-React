@@ -9,7 +9,7 @@ const Chat = ({ room }) => {
     const messageRef = collection(db, "messages");
     const chatsRef = useRef(null);
     const inputRef = useRef(null);
-    const isSubmitting = useRef(false); // Flag to prevent multiple submissions
+    const isSubmitting = useRef(false); 
 
     useEffect(() => {
         const queryMessages = query(
@@ -26,7 +26,7 @@ const Chat = ({ room }) => {
                     id: doc.id,
                 }));
 
-                // Sort messages based on createdAt after fetching
+               
                 const sortedMessages = fetchedMessages.sort((a, b) => {
                     return (a.createdAt?.toMillis() || 0) - (b.createdAt?.toMillis() || 0);
                 });
@@ -50,12 +50,12 @@ const Chat = ({ room }) => {
     const handleSubmitMessage = async (e) => {
         e.preventDefault();
         
-        if (newMessage.trim() === "" || isSubmitting.current) return; // Ignore empty messages or if already submitting
+        if (newMessage.trim() === "" || isSubmitting.current) return; 
 
-        isSubmitting.current = true; // Set the flag to true
+        isSubmitting.current = true;
 
         try {
-            // Add the new message to Firestore
+           
             await addDoc(messageRef, {
                 text: newMessage,
                 createdAt: serverTimestamp(),
@@ -64,13 +64,13 @@ const Chat = ({ room }) => {
                 room,
             });
 
-            // Clear the input field immediately
-            setNewMessage(""); // Clear the input state
+
+            setNewMessage(""); 
             
-            // Set a timeout to reset the submitting flag
+            
             setTimeout(() => {
-                isSubmitting.current = false; // Reset the flag after a short delay
-            }, 100); // Adjust the delay as needed
+                isSubmitting.current = false; 
+            }, 100);
         } catch (error) {
             console.error("Error adding message:", error);
             isSubmitting.current = false; // Reset the flag in case of an error
@@ -141,9 +141,10 @@ const Container = styled.div`
         width: 100%;
         display: flex;
         justify-content: space-around;
-        padding: 20px 0;
+        padding: 20px;
         position: sticky;
         bottom: 0;
+        gap: 20px;
     }
 
     input {
