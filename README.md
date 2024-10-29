@@ -1,8 +1,19 @@
-# React + Vite
+# Simple Dumpy Chat with Google Authentication
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshots
 
-Currently, two official plugins are available:
+<img width="1655" alt="Screenshot 2024-10-29 at 7 54 24 AM" src="https://github.com/user-attachments/assets/737664ff-68bb-489c-9888-c8a37ef7e077">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Enter The Room Name to Have Chat
+
+<img width="1680" alt="Screenshot 2024-10-29 at 3 45 51 PM" src="https://github.com/user-attachments/assets/c322166d-cbc9-44ea-8672-108b82742781">
+
+## Chat Section
+
+<img width="1680" alt="Screenshot 2024-10-29 at 3 46 53 PM" src="https://github.com/user-attachments/assets/9f535d0b-ecdd-4d58-9161-379386a328df">
+
+# Note: Every Chat you send, will be read by the Owner
+[Live Demo](https://dummy-chat-react.vercel.app)
+
+
+
