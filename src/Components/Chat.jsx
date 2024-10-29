@@ -86,7 +86,7 @@ const Chat = ({ room }) => {
                         key={msg.id}
                         isCurrentUser={msg.userId === "q7COMJrocpgh1pJtofDghMgKF0y1"}
                     >
-                        {msg.user}: {msg.text}
+                        { msg.userId === 'Gy4t5z6XtFWwfUTFx35UE88eybO2' ? "Ashvitha Akka": msg.user}: {msg.text}
                     </Message>
                 ))}
             </div>
