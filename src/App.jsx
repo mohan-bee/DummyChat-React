@@ -36,7 +36,7 @@ function App() {
     <>
       <SignOut setIsAuth={setIsAuth} setRoom={setRoom} />
 
-    {room ? <Chat room={room}/>: 
+    {room ? <Chat room={room} setRoom={setRoom} /> : 
     
      <div className='room'> 
       <label>Enter you room Name</label>
