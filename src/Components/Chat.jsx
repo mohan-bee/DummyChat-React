@@ -56,17 +56,17 @@ const Chat = ({ room, setRoom }) => {
         isSubmitting.current = true;
 
         try {
+            
+            const messageText = newMessage;
+            setNewMessage(""); 
            
             await addDoc(messageRef, {
-                text: newMessage,
+                text: messageText,
                 createdAt: serverTimestamp(),
                 user: auth.currentUser.displayName,
                 userId: auth.currentUser.uid,
                 room,
             });
-
-
-            setNewMessage(""); 
             
             
             setTimeout(() => {
