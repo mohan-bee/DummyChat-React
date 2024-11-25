@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { addDoc, collection, onSnapshot, query, serverTimestamp, where } from 'firebase/firestore';
 import { auth, db } from "../FirebaseConfig";
 import styled from 'styled-components';
+import Room from "./Room";
 
-const Chat = ({ room }) => {
+const Chat = ({ room, setRoom }) => {
     const [newMessage, setNewMessage] = useState("");
     const [messages, setMessages] = useState([]);
     const messageRef = collection(db, "messages");
@@ -77,9 +78,16 @@ const Chat = ({ room }) => {
         }
     };
 
+    const handleExit = () =>{
+        setRoom(null);
+    }
+
     return (
         <Container>
+            <div className="header">
             <h1>Welcome to: {room}</h1>
+            <button onClick={() => handleExit()}>Exit</button>
+            </div>
             <div className="chats" ref={chatsRef}>
                 {messages.map((msg) => (
                     <Message
@@ -123,12 +131,12 @@ const Container = styled.div`
     width: 80vw;
     height: 60vh;
 
-    h1 {
-        background-color: #06001e;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-    }
+   .header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 4.5rem;
+    padding: 20px;
+   }
 
     .chats {
         flex-grow: 1;
